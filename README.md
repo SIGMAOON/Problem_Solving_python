@@ -1,10 +1,3 @@
-# algorithm
+# BOJ/codeit/Programmers/SW Expert Acadmy
+Problem solvings
 
-# BOJ
-# codeit
-# Programmers
-# SW Expert Acadmy
-
-...
-
-Problem Solving
