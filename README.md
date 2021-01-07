@@ -1,9 +1,9 @@
 # algorithm
 
-BOJ
-codeit
-Programmers
-SW Expert Acadmy
+# BOJ
+# codeit
+# Programmers
+# SW Expert Acadmy
 
 ...
 
