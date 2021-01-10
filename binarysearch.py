@@ -1,4 +1,4 @@
-def solution(L, x):
+def bs(L, x):
     lo = 0
     hi = len(L) - 1
     
