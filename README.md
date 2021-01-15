@@ -1,2 +1,2 @@
-# Problem solvings
+# Problem Solvings
 
