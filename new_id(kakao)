@@ -1,0 +1,40 @@
+#https://programmers.co.kr/learn/courses/30/lessons/72410?language=python3
+
+def solution(new_id):
+    # step 1 : 소문자로 만들기
+    new_id = new_id.lower()
+    # step 2 : 알파벳과 -,.,_ 아니면 삭제하기
+    new_id = list(new_id)
+    for i in range(len(new_id)):
+        if new_id[i].isalpha() or new_id[i].isdigit() or new_id[i] == '-' or new_id[i] == '_' or  new_id[i] == '.':
+            pass
+        else:
+            new_id[i] = "@"
+    new_id = (''.join(new_id)).replace("@","")
+    new_id = list(new_id)
+    # step 3 : "."이 두번 이상 연속되면 하나로 바꾸기
+    for j in range(len(new_id)-1):
+        if new_id[j] == "." and new_id[j+1] == ".":
+            new_id[j] = "@"
+    new_id = (''.join(new_id)).replace("@","")
+    # step 4 : 처음이나 마지막이 "." 이라면 지워주기
+    new_id = list(new_id)
+    if len(new_id) > 0 and new_id[0] == '.':
+        new_id = new_id[1:]
+    if len(new_id) > 0 and new_id[-1] == '.':
+        new_id.pop()
+     # step 5 : 빈 문자열이면 a 대입하기
+    if len(new_id) == 0:
+        new_id.append("a")
+    """step 6 : 길이가 16 이상이라면 15로 줄여주기, 
+    그 후마지막이 "." 이라면 지워주기""" 
+    if len(new_id) >= 16:
+        new_id = new_id[:15]
+        if new_id[14] == ".":
+            new_id.pop()
+    # step 7 길이가 2 이하라면 마지막 문자를 길이가 3이 될 때까지 붙여주기
+    if len(new_id) <= 2:
+        last_char = new_id[-1]
+        while len(new_id) < 3:
+            new_id.append(last_char)
+    return ''.join(new_id)
